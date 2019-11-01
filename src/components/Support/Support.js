@@ -6,18 +6,36 @@ import { connect } from 'react-redux'
 
 class Support extends Component {
 
+
+    state = {
+        support: ''
+    }
+
+    handleChange = (event) => {
+        console.log('change made!');
+        this.setState({
+            support: event.target.value,
+        })
+    }
+
+    handleClick = () => {
+        this.props.dispatch({
+            type: 'ADD_SUPPORT',
+            payload: this.state.support,
+        })
+    }
+
+
     render() {
         return (
             <div className="Support">
                 <h2>How well are you being supported?</h2>
                 <p>Support?</p>
-                <input />
+                <input value={this.state.support} onChange={this.handleChange}/>
 
                 <div>
-                    <Link to="/comments"><button>Next</button></Link>
+                    <Link to="/comments"><button onClick={this.handleClick}>Next</button></Link>
                 </div>
-
-                <pre>{JSON.stringify(this.props, null, 2)}</pre>
 
             </div>
         );

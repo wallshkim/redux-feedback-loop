@@ -30,14 +30,12 @@ class Understanding extends Component {
             <div className="Understanding">
                 <h2>How well are you understanding the content?</h2>
                 <p>Understanding?</p>
-                <input />
+                <input value={this.state.understanding} onChange={this.handleChange}/>
 
 
                 <div>
-                    <Link to="/support"><button>Next</button></Link>
+                    <Link to="/support"><button onClick={this.handleClick}>Next</button></Link>
                 </div>
-
-                <pre>{JSON.stringify(this.props, null, 2)}</pre>
 
             </div>
         );

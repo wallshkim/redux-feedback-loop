@@ -16,6 +16,12 @@ const feedBackReducer = (state = {}, action) => {
     else if (action.type === 'ADD_UNDERSTANDING'){
         return {...state, understanding: action.payload}
     }
+    else if (action.type === 'ADD_SUPPORT') {
+        return { ...state, support: action.payload }
+    }
+    else if (action.type === 'ADD_COMMENTS') {
+        return { ...state, comments: action.payload }
+    }
     return state
 }
 
@@ -26,7 +32,6 @@ const storeInstance = createStore(
     }),
     applyMiddleware(logger)
 )
-
 
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));

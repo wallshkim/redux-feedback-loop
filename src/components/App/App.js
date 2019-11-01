@@ -15,22 +15,20 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-        </header>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Feedback!</h1>
+            <h4><i>Don't forget it!</i></h4>
+          </header>
 
-      
-        <Route exact path="/" component={Feeling} />
-        <Route path="/understanding" component={Understanding} />
-        <Route path="/support" component={Support} />
-        <Route path="/comments" component={Comments} />
-        <Route path="/review" component={Review} />
-      
+          <Route exact path="/" component={Feeling} />
+          <Route path="/understanding" component={Understanding} />
+          <Route path="/support" component={Support} />
+          <Route path="/comments" component={Comments} />
+          <Route path="/review" component={Review} />
 
-        {JSON.stringify(this.props, null, 2)}
-      </div>
+          <pre>{JSON.stringify(this.props, null, 2)}</pre>
+        </div>
       </Router>
     );
   }

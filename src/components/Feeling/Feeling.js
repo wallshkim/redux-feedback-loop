@@ -30,13 +30,11 @@ class Feeling extends Component {
             <div className="Feeling">
                 <h2>How are you feeling today?</h2>
                 <p>Feeling?</p>
-                <input value={this.state.feelingIn} onChange={this.handleChange}/>
+                <input value={this.state.feeling} onChange={this.handleChange}/>
 
                 <div>
                     <Link to="/understanding"><button onClick={this.handleClick}>Next</button></Link>
                 </div>
-
-                <pre>{JSON.stringify(this.props, null, 2)}</pre>
 
             </div>
         );
