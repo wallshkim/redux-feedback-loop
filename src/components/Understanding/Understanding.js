@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class Understanding extends Component {
@@ -18,10 +16,15 @@ class Understanding extends Component {
     }
 
     handleClick = () => {
-        this.props.dispatch({
-            type: 'ADD_UNDERSTANDING',
-            payload: this.state.understanding,
-        })
+        if (this.state.understanding === '') {
+            alert('Please enter score before moving on.')
+        } else {
+            this.props.dispatch({
+                type: 'ADD_UNDERSTANDING',
+                payload: this.state.understanding,
+            })
+            this.props.history.push('/support')
+        }
     }
 
 
@@ -30,11 +33,11 @@ class Understanding extends Component {
             <div className="Understanding">
                 <h2>How well are you understanding the content?</h2>
                 <p>Understanding?</p>
-                <input value={this.state.understanding} onChange={this.handleChange}/>
+                <input value={this.state.understanding} onChange={this.handleChange} />
 
 
                 <div>
-                    <Link to="/support"><button onClick={this.handleClick}>Next</button></Link>
+                    <button onClick={this.handleClick}>Next</button>
                 </div>
 
             </div>
@@ -47,4 +50,4 @@ const mapReduxStateToProps = (reduxState) => {
     return reduxState;
 }
 
-export default connect(mapReduxStateToProps)(Understanding);
+export default withRouter(connect(mapReduxStateToProps)(Understanding));

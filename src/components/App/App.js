@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import Feeling from '../Feeling/Feeling'
 import Understanding from '../Understanding/Understanding'
 import Support from '../Support/Support'
 import Comments from '../Comments/Comments'
 import Review from '../Review/Review'
+import Success from '../Success/Success'
 
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
@@ -26,6 +26,7 @@ class App extends Component {
           <Route path="/support" component={Support} />
           <Route path="/comments" component={Comments} />
           <Route path="/review" component={Review} />
+          <Route path="/success" component={Success} />
 
           <pre>{JSON.stringify(this.props, null, 2)}</pre>
         </div>

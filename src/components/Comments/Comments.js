@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
@@ -23,6 +22,7 @@ class Comments extends Component {
             type: 'ADD_COMMENTS',
             payload: this.state.comments,
         })
+        this.props.history.push('/review')
     }
 
     render() {
@@ -33,7 +33,7 @@ class Comments extends Component {
                 <input value={this.state.comments} onChange={this.handleChange}/>
 
                 <div>
-                    <Link to="/review"><button onClick={this.handleClick}>Next</button></Link>
+                    <button onClick={this.handleClick}>Next</button>
                 </div>
 
             </div>
@@ -46,4 +46,4 @@ const mapReduxStateToProps = (reduxState) => {
     return reduxState;
 }
 
-export default connect(mapReduxStateToProps)(Comments);
+export default withRouter(connect(mapReduxStateToProps)(Comments));
