@@ -33,7 +33,15 @@ class Support extends Component {
             <div className="Support">
                 <h2>How well are you being supported?</h2>
                 <p>Support?</p>
-                <input value={this.state.support} onChange={this.handleChange} />
+                {/* <input value={this.state.support} onChange={this.handleChange} /> */}
+                <select value={this.state.feeling} onChange={this.handleChange}>
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
 
                 <div>
                     <button onClick={this.handleClick}>Next</button>
