@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import '../App/App.css'
+import { withRouter } from 'react-router-dom';
+
 
 
 
@@ -83,4 +85,4 @@ const mapReduxStateToProps = (reduxState) => {
     return reduxState;
 }
 
-export default connect(mapReduxStateToProps)(Review);
+export default withRouter(connect(mapReduxStateToProps)(Review));
