@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import '../App/App.css'
+
 
 class Understanding extends Component {
 
@@ -27,14 +29,21 @@ class Understanding extends Component {
         }
     }
 
+    handleBack = () => {
+        this.props.dispatch({
+            type: 'ADD_FEELING',
+            payload: '',
+        })
+        this.props.history.push('/')
+    }
+
 
     render() {
         return (
             <div className="Understanding">
                 <h2>How well are you understanding the content?</h2>
                 <p>Understanding?</p>
-                {/* <input value={this.state.understanding} onChange={this.handleChange} /> */}
-                <select value={this.state.feeling} onChange={this.handleChange}>
+                <select value={this.state.understanding} onChange={this.handleChange}>
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -44,6 +53,7 @@ class Understanding extends Component {
                 </select>
 
                 <div>
+                    <button onClick={this.handleBack}>Back</button>
                     <button onClick={this.handleClick}>Next</button>
                 </div>
 

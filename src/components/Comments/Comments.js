@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import '../App/App.css'
+
 
 
 class Comments extends Component {
@@ -25,6 +27,14 @@ class Comments extends Component {
         this.props.history.push('/review')
     }
 
+    handleBack = () => {
+        this.props.dispatch({
+            type: 'ADD_SUPPORT',
+            payload: '',
+        })
+        this.props.history.push('/support')
+    }
+
     render() {
         return (
             <div className="Comments">
@@ -33,6 +43,7 @@ class Comments extends Component {
                 <input value={this.state.comments} onChange={this.handleChange}/>
 
                 <div>
+                    <button onClick={this.handleBack}>Back</button>
                     <button onClick={this.handleClick}>Next</button>
                 </div>
 

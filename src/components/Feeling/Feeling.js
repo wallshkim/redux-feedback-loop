@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../App/App.css'
+
 
 
 class Feeling extends Component {
@@ -34,7 +36,6 @@ class Feeling extends Component {
             <div className="Feeling">
                 <h2>How are you feeling today?</h2>
                 <p>Feeling?</p>
-                {/* <input value={this.state.feeling} onChange={this.handleChange} /> */}
                 <select value={this.state.feeling} onChange={this.handleChange}>
                     <option value=""></option>
                     <option value="1">1</option>
@@ -47,6 +48,8 @@ class Feeling extends Component {
                 <div>
                     <button onClick={this.handleClick}>Next</button>
                 </div>
+
+                {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
 
             </div>
         );

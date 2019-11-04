@@ -17,3 +17,13 @@
   font-size: large;
 }
 
+.Review {
+  text-align: center;
+  width: 500px;
+  margin: auto;
+}
+
+.Review-table {
+  border-style: solid;
+  border-width: 2px;
+}

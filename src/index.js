@@ -11,13 +11,13 @@ import { Provider } from 'react-redux';
 
 const feedbackReducer = (state = {}, action) => {
     if (action.type === 'ADD_FEELING'){
-        return {...state, feeling: Number(action.payload) }
+        return {...state, feeling: action.payload }
     } 
     else if (action.type === 'ADD_UNDERSTANDING'){
-        return { ...state, understanding: Number(action.payload) }
+        return { ...state, understanding: action.payload }
     }
     else if (action.type === 'ADD_SUPPORT') {
-        return { ...state, support: Number(action.payload) }
+        return { ...state, support: action.payload }
     }
     else if (action.type === 'ADD_COMMENTS') {
         return { ...state, comments: action.payload }

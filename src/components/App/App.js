@@ -11,6 +11,7 @@ import { HashRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
+
 class App extends Component {
   render() {
     return (
@@ -28,7 +29,7 @@ class App extends Component {
           <Route path="/review" component={Review} />
           <Route path="/success" component={Success} />
 
-          <pre>{JSON.stringify(this.props, null, 2)}</pre>
+          {/* <pre>{JSON.stringify(this.props, null, 2)}</pre> */}
         </div>
       </Router>
     );
